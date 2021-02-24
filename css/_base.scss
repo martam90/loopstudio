@@ -1,0 +1,34 @@
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-grey: hsl(0, 0%, 55%);
+$very-dark-grey: hsl(0, 0%, 41%);
+
+$font-size: 0.9rem; //15px;
+
+$font-primary: "Alata", sans-serif; //400
+
+$font-secondary: "Josefin Sans", sans-serif; // 300
+
+$transition: all ease-in-out 0.3s;
+
+$mobile: 33.75em;
+$tablet: 49em;
+$desktop: 81.25em;
+
+@mixin mobile {
+  @media screen and(max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and(min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and(min-width: $desktop) {
+    @content;
+  }
+}

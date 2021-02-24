@@ -1,0 +1,124 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+:focus {
+  outline: 2px dotted rgb(255, 138, 255);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 1.5rem;
+
+  @include tablet {
+    padding: 0 5rem;
+    margin: 0 auto;
+    width: 95%;
+  }
+}
+
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  font-size: $font-size;
+  font-family: $font-primary;
+}
+
+p {
+  font-size: $font-size;
+  font-family: $font-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+  color: $white;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+
+  @include tablet {
+    margin-top: 1rem;
+    font-size: 3rem;
+  }
+
+  @include desktop {
+    margin-top: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  background-color: #ca5cbc;
+  padding: 0.4rem;
+  animation: moveInBottom 0.5s ease-out;
+  animation-fill-mode: backwards;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10rem;
+    z-index: -1;
+    background-color: #ca5cbc;
+    transition: $transition;
+  }
+
+  &:focus,
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  }
+
+  &:focus::after,
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+}
