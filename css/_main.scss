@@ -1,166 +1,170 @@
+
 .interactive {
-  margin-top: 10.5rem;
-  margin-bottom: 11.5rem;
-  text-align: center;
+    margin-top: 10.5rem;
+    margin-bottom: 11.5rem;
+    text-align: center;
 }
 
 .interactive__item {
-  @include desktop {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 4rem;
-  }
 
-  img {
-    @include mobile {
-      width: 100%;
+    @include desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 4rem;
     }
 
-    @include tablet {
-      z-index: -1;
+    img {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            z-index: -1;
+        }
     }
-  }
 }
 
 .interactive__content {
-  text-align: center;
-
-  @include desktop {
-    text-align: left;
-    align-self: end;
-    padding-top: 6.5rem;
-    padding-left: 6rem;
-
-    transform: translateX(-10rem);
-    background-color: $white;
-    z-index: 99;
-  }
+    text-align: center;
+    
+    @include desktop {
+        text-align: left;
+        align-self: end;
+        padding-top: 6.5rem;
+        padding-left: 6rem;
+    
+        transform: translateX(-10rem);
+        background-color: $white;
+        z-index: 99
+    }
 }
 
-.text {
-  color: $very-dark-grey;
-  line-height: 1.8;
-  margin-bottom: 0;
 
-  @include desktop {
-    width: 28rem;
-  }
+.text {
+    color: $very-dark-grey;
+    line-height: 1.8;
+    margin-bottom: 0;
+
+    @include desktop {
+        width: 28rem;
+    }
 }
 
 .creations {
-  margin-bottom: 9.5rem;
-  text-align: center;
+    margin-bottom: 9.5rem;
+    text-align: center;
 
-  @include tablet {
-    display: grid;
-    grid-template-areas:
-      "heading button"
-      "gallery gallery";
-    gap: 4.8rem;
-    text-align: left;
-  }
-
-  h2 {
     @include tablet {
-      margin: 0;
-      grid-area: heading;
-      padding-bottom: 0;
+        display: grid;
+        grid-template-areas:
+        "heading button"
+        "gallery gallery";
+        gap: 4.8rem;
+        text-align: left;
     }
-  }
+
+    h2 {
+        @include tablet {
+            margin: 0;
+            grid-area: heading;
+            padding-bottom: 0;
+        }
+    }
 }
 
+
 .btn-link {
-  color: $black;
-  text-transform: uppercase;
-  text-align: center;
-  border: 1px solid $black;
-  padding: 0.7rem 2.5rem;
-  letter-spacing: 0.2rem;
-  transition: $transition;
-
-  &:hover {
-    background-color: $black;
-    color: $white;
+    color: $black;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid $black;
+    padding: 0.7rem 2.5rem;
+    letter-spacing: 0.2rem;
     transition: $transition;
-  }
 
-  @include tablet {
-    justify-self: end;
-    align-self: end;
-    grid-area: button;
-    margin-right: 1rem;
-  }
+    &:hover {
+        background-color: $black;
+        color: $white;
+        transition: $transition;
+    }
+
+    @include tablet {
+        justify-self: end;
+        align-self: end;
+        grid-area: button;
+        margin-right: 1rem;
+    }
 }
 
 .gallery {
-  display: grid;
-  gap: 2rem;
-  margin-bottom: 2rem;
-
-  @include tablet {
     display: grid;
-    grid-area: gallery;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  }
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @include tablet {
+        display: grid;
+        grid-area: gallery;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
 }
 
 figure {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-  color: $white;
-  z-index: 3;
-  cursor: pointer;
-  transition: $transition;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.2)
-    );
+    overflow: hidden;
+    margin: 0;
+    color: $white;
+    z-index: 3;
+    cursor: pointer;
     transition: $transition;
-  }
 
-  &:hover {
-    color: $black;
-  }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+        transition: $transition;
+    }
 
-  &:hover::before {
-    background: rgba(255, 255, 255, 0.3);
-  }
+    &:hover {
+        color: $black;
+    }
 
-  img {
-    width: 100%;
-    display: block;
-  }
+    &:hover::before {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
 }
 
 figcaption {
-  position: absolute;
-  font-family: $font-secondary;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  transform: translateY(-100%);
-  max-width: 8rem;
-  text-align: left;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  z-index: 5;
+    position: absolute;
+    font-family: $font-secondary;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transform: translateY(-100%);
+    max-width: 8rem;
+    text-align: left;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    z-index: 5;
 
-  @include tablet {
-    padding-left: 2.3rem;
-    padding-bottom: 1.9rem;
-    font-size: 1.9rem;
-    max-width: 0;
-  }
+    @include tablet {
+        padding-left: 2.3rem;
+        padding-bottom: 1.9rem;
+        font-size: 1.9rem;
+        max-width: 0;
+    }
 }
+
+
