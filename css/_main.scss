@@ -20,6 +20,11 @@
 
         @include tablet {
             z-index: -1;
+            max-width: 100%;
+        }
+
+        @include desktop {
+            max-width: unset;
         }
     }
 }
@@ -100,10 +105,10 @@
     gap: 2rem;
     margin-bottom: 2rem;
 
-    @include tablet {
+    @include tablet-gallery {
         display: grid;
         grid-area: gallery;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     }
 }
 

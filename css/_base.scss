@@ -11,15 +11,23 @@ $font-secondary: "Josefin Sans", sans-serif; // 300
 
 $transition: all ease-in-out 0.3s;
 
-$mobile: 33.75em;
+$mobile: 48em; //33.75em;
 $tablet: 49em;
 $desktop: 81.25em;
+$tablet-gallery:45em;
 
 @mixin mobile {
   @media screen and(max-width: $mobile) {
     @content;
   }
 }
+
+@mixin tablet-gallery {
+  @media screen and(min-width: $tablet-gallery) {
+    @content;
+  }
+}
+
 
 @mixin tablet {
   @media screen and(min-width: $tablet) {
