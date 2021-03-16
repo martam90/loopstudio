@@ -135,6 +135,27 @@ button:focus::after, button:hover::after {
   opacity: 0;
 }
 
+.skip-links {
+  background-color: #ff8aff;
+  color: white;
+  padding: 0.5rem;
+  left: 0.5rem;
+  top: 0;
+  position: absolute;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.skip-links:focus {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  z-index: 99;
+}
+
 header {
   background-image: url("../images/mobile/image-hero.jpg");
   background-repeat: no-repeat;
